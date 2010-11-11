@@ -21,7 +21,7 @@ function go() {
             $('div#title').fadeTo('slow', 1);
             if(blinkCount++ == MAX_BLINKS) {
                 clearInterval(intervalId);
-                page.sendMessage('com.zoomsystems.common.messages.StateManagerMessage', '0', 'localhost/core');
+                callback;
             }
             on = true;
         }
