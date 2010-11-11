@@ -17,6 +17,7 @@ The following gives you regular blinking with some reasonable defaults:
  * No max blinks
  * blink durations ~1 second
 
+*basic usage*
 
     $('selector').blink();
 
