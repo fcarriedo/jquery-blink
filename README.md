@@ -6,6 +6,10 @@ Just thought of sharing as somebody might have the same unveliebable legitimate 
 
 *(Yes, I know there is one of this already!)*
 
+# Dependencies
+
+Of course it depends on jQuery ;).
+
 # Usage
 
 The following gives you regular blinking with some reasonable defaults:
