@@ -2,7 +2,7 @@
 
 I had to do this implementation for an unbelievable legitimate use of the evil blink at my company.
 
-Just thought of sharing as somebody might have the same unveliebable legitimate need. =P.
+Just thought of sharing as somebody might have the same unbelievable legitimate need. =P.
 
 **(Yes, I know there is one of this already!)**
 
@@ -17,11 +17,11 @@ The following gives you regular blinking with some reasonable defaults:
  * No max blinks
  * blink durations ~1 second
 
-*basic usage*
+*Basic usage:*
 
     $('selector').blink();
 
-For some more advanced uses you can use:
+For some more advanced uses:
 
     $('selector').blink({maxBlinks: 60, blinkDuration: 1000}, callbackWhenMaxBlinksReached); 
 
