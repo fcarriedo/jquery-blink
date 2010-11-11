@@ -35,8 +35,8 @@
         <script type='text/javascript' src='../lib/jquery.blink.js'></script>
         <script type='text/javascript'>
             $(document).ready(function() {
-                    $('#title').blink({maxBlinks: 5, onMaxBlinks: showContent, onBlink: function() {$('body').append('some - ');}});
-                    $('#status').blink();
+                $('#title').blink({maxBlinks: 5, onMaxBlinks: showContent, onBlink: function() {$('body').append('some & ');}});
+                $('#status').blink();
             });
 
             function showContent() {
@@ -51,5 +51,6 @@
         <div id='content' style='display: none;'>Content yada</div>
 
         <div id='status'>This is blinking indefinitely</div>
+
     </body>
 </html>
