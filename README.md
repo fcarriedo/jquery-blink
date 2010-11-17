@@ -23,8 +23,8 @@ The following gives you regular blinking with some reasonable defaults:
 
 For some more advanced uses:
 
-    $('selector').blink({maxBlinks: 60, blinkDuration: 1000}, callbackWhenMaxBlinksReached); 
+    $('selector').blink({maxBlinks: 60, blinkPeriod: 1000, speed: 'slow', onBlink: function(){}, onMaxBlinks: function(){}}); 
 
-You can specify the maximum number of blinks as well as the blink duration.
+You can override any configuration parameters that you like or use any of the callbacks.
 
-The callback will only be executed if maxBlinks was specified and reached.
+The `onMaxBlinks` callback only gets called if `maxBlinks` was specified.
