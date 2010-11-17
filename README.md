@@ -14,13 +14,12 @@ Of course it depends on jQuery ;).
 
 *Basic usage:*
 
-The following gives you regular blinking with some reasonable defaults:
+    $('selector').blink();
+
+The previous gives you regular blinking with some reasonable defaults:
 
  * No max blinks
  * blink durations ~1 second
-
--
-    $('selector').blink();
 
 *Advanced usage:*
 
