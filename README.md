@@ -12,16 +12,16 @@ Of course it depends on jQuery ;).
 
 # Usage
 
+*Basic usage:*
+
 The following gives you regular blinking with some reasonable defaults:
 
  * No max blinks
  * blink durations ~1 second
 
-*Basic usage:*
-
     $('selector').blink();
 
-For some more advanced uses:
+*Advanced usage:*
 
     $('selector').blink({maxBlinks: 60, blinkPeriod: 1000, speed: 'slow', onBlink: function(){}, onMaxBlinks: function(){}}); 
 
