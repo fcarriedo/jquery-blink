@@ -1,56 +1,67 @@
 <html>
-    <head>
-        <style type='text/css'>
-            body {
-                background-color: #1b1b1b;
-                font-family: sans-serif;
-                color: #eee;
-            }
-            div#title {
-                color: red;
-                font-size: 25pt;                
-                font-weight: bold;
-                font-style: italic;
-                position: absolute;
-                padding: 15px;
-                top: 5%;
-                left: 80%;
-            }
-            div#content {
-                font-size: 42pt;
-                position: absolute;
-                top: 30%;
-                left: 40%;
-                color: white;
-            }
-            div#status {
-                font-size: 10pt;
-                position: absolute;
-                right: 5%;
-                bottom: 5%;
-                padding: 5px;
-            }
-        </style>
-        <script type='text/javascript' src='http://code.jquery.com/jquery-1.5.min.js'></script>
-        <script type='text/javascript' src='../lib/jquery.blink.js'></script>
-        <script type='text/javascript'>
-            $(document).ready(function() {
-                $('#title').blink({maxBlinks: 5, onMaxBlinks: showContent, onBlink: function() {$('body').append('some & ');}});
-                $('#status').blink();
-            });
+	<head>
+		<style type='text/css'>
+			body {
+				background-color: #1b1b1b;
+				font-family: sans-serif;
+				color: #eee;
+			}
+			div#title {
+				color: red;
+				font-size: 25pt;
+				font-weight: bold;
+				font-style: italic;
+				position: absolute;
+				padding: 15px;
+				top: 5%;
+				left: 80%;
+			}
+			div#content {
+				font-size: 42pt;
+				position: absolute;
+				top: 30%;
+				left: 40%;
+				color: white;
+			}
+			div#status {
+				font-size: 10pt;
+				position: absolute;
+				right: 5%;
+				bottom: 5%;
+				padding: 5px;
+			}
+		</style>
+		<script type='text/javascript' src='http://code.jquery.com/jquery-1.5.min.js'></script>
+		<script type='text/javascript' src='../lib/jquery.blink.js'></script>
+		<script type='text/javascript'>
 
-            function showContent() {
-                $('#content').fadeIn('slow');
-            }
-        </script>
-    </head>
-    <body>
-        
-        <div id='title'>jQuery Blink!</div>
+			var colors = ['red','yellow','orange'];
 
-        <div id='content' style='display: none;'>Content yada</div>
+			$(document).ready(function() {
+					// The 'status' blinks indefinitely. Simple default behavior.
+					$('#status').blink(); 
 
-        <div id='status'>This is blinking indefinitely</div>
+					// 'title' exhibits is a little bit more complex behavior.
+					$('#title').blink({
+							maxBlinks: 5,
+							onMaxBlinks: function() {
+								$('#content').fadeIn('slow');
+							},
+							onBlink: function(i) {
+								$(this).css('color', colors[i%3]);
+								$('body').append( i + ' - ' );
+							}
+					});
+			});
+		</script>
+	</head>
+	<body>
 
-    </body>
+		<div id='title'>jQuery Blink!</div>
+
+		<div id='content' style='display: none;'>Content yada</div>
+
+		<div id='status'>This is blinking indefinitely</div>
+
+	</body>
 </html>
