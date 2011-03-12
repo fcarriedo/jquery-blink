@@ -28,3 +28,4 @@ The previous gives you regular blinking with some reasonable defaults:
 You can override any configuration parameters that you like or use any of the callbacks.
 
 The `onMaxBlinks` callback only gets called if `maxBlinks` was specified.
+
