@@ -37,14 +37,26 @@
         <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
         <script type='text/javascript' src='jquery.blink.js'></script>
         <script type='text/javascript'>
+
+            const colors = ['red','yellow','orange'];
+
             $(document).ready(function() {
-                $('#title').blink({maxBlinks: 5, onMaxBlinks: showContent, onBlink: function() {$('body').append('some & ');}});
+                // The 'status' blinks indefinitely. Simple default behavior.
                 $('#status').blink();
+
+                // 'title' exhibits is a little bit more complex behavior.
+                $('#title').blink({
+                    maxBlinks: 5,
+                    onMaxBlinks: function() {
+                      $('#content').fadeIn('slow');
+                    },
+                    onBlink: function(i) {
+                      $(this).css('color', colors[i%3]);
+                      $('body').append( i + ' - ' );
+                    }
+                });
             });
 
-            function showContent() {
-                $('#content').fadeIn('slow');
-            }
         </script>
 
         <script type="text/javascript">
